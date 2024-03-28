@@ -2,7 +2,13 @@
 const navbarShowBtn = document.querySelector('.navbar-show-btn');
 const navbarCollapseDiv = document.querySelector('.navbar-collapse');
 const navbarHideBtn = document.querySelector('.navbar-hide-btn');
+const signInButton = document.getElementById('signInButton');
 
+signInButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var href = this.getAttribute("href");
+    window.location.href = href;
+});
 navbarShowBtn.addEventListener('click', function(){
     navbarCollapseDiv.classList.add('navbar-show');
 });
