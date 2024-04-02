@@ -76,7 +76,7 @@
                     <p class = "text text-md">(description of the healthcare management website)</p>
                     <div class = "btn-group">
                         <a href = "#" class = "btn btn-white">Learn More</a>
-                        <a id = "signInButton" href = "https://jthospital.auth.us-east-1.amazoncognito.com/login?client_id=qg6k064nl3huuvk8ac1mftsgp&response_type=code&scope=aws.cognito.signin.user.admin&redirect_uri=https%3A%2F%2Flocalhost%3A8080" class = "btn btn-light-blue">Sign In</a>
+                        <a id = "signInButton" href = "login.php" class = "btn btn-light-blue">Sign In</a>
                     </div>
                 </div>
                 <div class = "header-inner-right">
