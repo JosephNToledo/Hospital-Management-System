@@ -31,7 +31,7 @@ $result = $conn->query($sql);
   <title>View Patients</title>
   <style>
         body { 
-        background-color: #ADD8E6; 
+        background-color: #008080; 
         color: black; 
         font-family: Arial, sans-serif; 
         text-align: center; 
@@ -39,12 +39,12 @@ $result = $conn->query($sql);
         padding: 20px; 
     } 
     h2{ 
-        background-color:#008080; 
+        background-color:#ADD8E6; 
             padding: 1%; 
             border-radius: 35px; 
     } 
     table { 
-        background-color: #008080; 
+        background-color: #ADD8E6; 
         width: 100%; 
         border-collapse: collapse; 
         margin-top: 20px; 
@@ -55,7 +55,7 @@ $result = $conn->query($sql);
         color:black; 
     } 
     th { 
-        background-color: #008080; 
+        background-color: #ADD8E6; 
     }
   </style>
 </head>
