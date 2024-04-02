@@ -29,14 +29,55 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; /* Remove default browser margins */
+    }
 
-    <head></head>
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0; /* Optional background color */
+    }
 
-    <body>
-        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-            username : <input type="text" name="user"/><br/>
-            password : <input type="password" name="pwd"/><br/>
-            <input type="submit" value="Verify" name="verify"/>
-        </form>
-    </body>
+    .login-form {
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <form class="login-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <label class="login-label" for="user">Username:</label>
+      <input class="login-input" type="text" name="user" id="user" required>
+      <label class="login-label" for="pwd">Password:</label>
+      <input class="login-input" type="password" name="pwd" id="pwd" required>
+      <input type="submit" value="Verify" name="verify">
+    </form>
+  </div>
+</body>
 </html>
+
