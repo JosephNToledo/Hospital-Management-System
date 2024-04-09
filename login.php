@@ -12,26 +12,23 @@
             $res = pg_query_params($conn,$query,array($user,$pwd));
             $result = pg_fetch_object($res);
 
-            if($result){
+            if($result) {
                 $authenticated=$result->verify==1;
+                $userRole = trim(strtolower($result->role));
             }
         }
         if (!$authenticated){
             echo "Not valid";
         }
         else{
-          $userRole = trim(strtolower($result->role));
-          var_dump($userRole);
           if ($userRole == 'admin') {
               header("Location: admin.php");
-              exit();
           } elseif ($userRole == 'patient') {
               header("Location: patient.php");
-              exit();
           } else {
               header("Location: index.php");
-              exit();
           }
+          exit();
         }
     }
 ?>
