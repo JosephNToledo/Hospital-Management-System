@@ -60,7 +60,7 @@ $result = $conn->query($sql);
   </style>
 </head>
 <body>
-  <h2>View Patients</h2>
+  <h2>Patient's Information</h2>
   <table>
     <tr>
       <th>ID</th>
