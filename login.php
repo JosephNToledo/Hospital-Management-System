@@ -20,8 +20,17 @@
             echo "Not valid";
         }
         else{
-                header("Location: view_patients.php");
-                exit();
+          $userRole = $result->role;
+          if ($userRole == 'admin') {
+              header("Location: admin.php");
+              exit();
+          } elseif ($userRole == 'patient') {
+              header("Location: patients.php");
+              exit();
+          } else {
+              header("Location: index.php");
+              exit();
+          }
         }
     }
 ?>
@@ -80,4 +89,5 @@
   </div>
 </body>
 </html>
+
 
