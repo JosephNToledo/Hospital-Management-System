@@ -11,20 +11,9 @@
             $res = pg_query_params($conn,$query,array($user,$pwd));
             $result = pg_fetch_object($res);
 
-            if ($result) {
-              if ($result->verify == 1) {
-                $authenticated = true;
-                // Retrieve user role from a separate query
-                $roleQuery = "SELECT role FROM users WHERE username = '$user'";
-                $roleResult = pg_query($conn, $roleQuery);
-                if (pg_num_rows($roleResult) > 0) {
-                  $userRole = trim(strtolower(pg_fetch_result($roleResult, 0, "role")));
-                } else {
-                  // Handle error: unable to retrieve role
-                  echo "Error fetching user role";
-                  exit();
-                }
-              }
+            if($result) {
+                $authenticated=$result->verify==1;
+                $userRole = trim(strtolower($result->role));
             }
         }
         if (!$authenticated){
