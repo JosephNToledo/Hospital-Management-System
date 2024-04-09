@@ -21,6 +21,7 @@
         }
         else{
           $userRole = trim(strtolower($result->role));
+          var_dump($userRole);
           if ($userRole == 'admin') {
               header("Location: admin.php");
               exit();
