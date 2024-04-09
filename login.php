@@ -20,12 +20,12 @@
             echo "Not valid";
         }
         else{
-          $userRole = $result->role;
+          $userRole = trim(strtolower($result->role));
           if ($userRole == 'admin') {
               header("Location: admin.php");
               exit();
           } elseif ($userRole == 'patient') {
-              header("Location: patients.php");
+              header("Location: patient.php");
               exit();
           } else {
               header("Location: index.php");
