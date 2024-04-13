@@ -164,8 +164,8 @@ Resources:
         Ref: VPC
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 5000
-          ToPort: 5000
+          FromPort: 80
+          ToPort: 80
           CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
           FromPort: 443
@@ -177,8 +177,8 @@ Resources:
     DependsOn: ContainerSecurityGroup
     Properties:
       IpProtocol: tcp
-      FromPort: 5000
-      ToPort: 5000
+      FromPort: 80
+      ToPort: 80
       SourceSecurityGroupId:
           Ref: ContainerSecurityGroup
       GroupId:
@@ -226,8 +226,8 @@ Resources:
     Type: AWS::EC2::SecurityGroupEgress
     Properties:
       IpProtocol: tcp
-      FromPort: 5000
-      ToPort: 5000
+      FromPort: 80
+      ToPort: 80
       DestinationSecurityGroupId:
           Ref: ContainerSecurityGroup
       GroupId:
@@ -283,7 +283,7 @@ Resources:
       ExecutionRoleArn: !Ref ExecutionRole
       ContainerDefinitions:
         - Name: toledo-hospital-container
-          Image: 992382472262.dkr.ecr.ca-central-1.amazonaws.com/inft-1210-assignment-5:latest
+          Image: 
           LogConfiguration:
               LogDriver: awslogs
               Options:
@@ -291,7 +291,7 @@ Resources:
                 awslogs-stream-prefix: hospital
                 awslogs-region: ca-central-1
           PortMappings:
-            - ContainerPort: 5000
+            - ContainerPort: 80
       RequiresCompatibilities:
         - FARGATE
 
@@ -316,7 +316,7 @@ Resources:
       LoadBalancers:
         - TargetGroupArn: !Ref TargetGroup 
           ContainerName: toledo-hospital-container
-          ContainerPort: 5000
+          ContainerPort: 80
 
   AutoScalingRole:
     Type: AWS::IAM::Role
